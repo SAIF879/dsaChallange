@@ -3,7 +3,7 @@ package daily;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-//BUDDY STRING PROBLEM
+//BUDDY STRING PROBLEM   QUESTION <1>
 public class LeetCode859 {
 
     public static Boolean BuddyString(String s , String goal){

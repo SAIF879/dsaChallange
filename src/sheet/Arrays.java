@@ -42,6 +42,27 @@ public class Arrays {
 
     }
 
+    public static int maxSubArraySum(int arr[]){
+        int max = arr[0];
+        int count = 0;
+
+        for (int i = 0 ; i < arr.length ; i++){
+            count+= arr[i];
+            if (count> max ) max = count;
+            if (count<0) count = 0;
+
+        }
+        return max;
+    }
+
+    public static Boolean allNegetive(int arr[]){
+        int count = 0;
+        for (int i = 0 ; i < arr.length ; i++){
+            if (arr[i]<0) count +=1;
+        }
+        return count==arr.length;
+    }
+
 
     //public static int[] sortedSquares(int[] arr) {}TODO
     
@@ -54,9 +75,16 @@ public class Arrays {
         //Output: [3,99,-1,-100]   DONE
 
         //sq of sorted array
-        int  nums[] = {-5,-3,-2,-1};
+        //int  nums[] = {-5,-3,-2,-1};
         //Output: [0,1,9,16,100]
         //naiveSquareSorted(nums);  //nlogn
+
+        //maxSubArraySum
+        int  nums[] = {-2,1,-3,4,-1,2,1,-5,4};
+        int arr[] = {-1 , -2 };
+        System.out.println(allNegetive(arr));
+       // Output: 6
+        System.out.println(maxSubArraySum(arr));
 
 
 
