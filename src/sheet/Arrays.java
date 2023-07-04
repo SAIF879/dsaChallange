@@ -1,8 +1,5 @@
 package sheet;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-
 public class Arrays {
     public static void fullRotate(int arr[], int start, int end) {
         while (start <= end) {
@@ -55,13 +52,26 @@ public class Arrays {
         return max;
     }
 
-    public static Boolean allNegetive(int arr[]){
+    public static Boolean allNegative(int arr[]){
         int count = 0;
         for (int i = 0 ; i < arr.length ; i++){
             if (arr[i]<0) count +=1;
         }
         return count==arr.length;
     }
+
+    public static int maxSubArrayProduct(int arr[]){
+        int count = arr[0];
+        int max = arr[0];
+
+        for (int i = 0 ; i < arr.length ; i++){
+            count *=arr[i];
+            if (count>max) max =count;
+            if (count<0) count = 0;
+        }
+        return max;
+    }
+
 
 
     //public static int[] sortedSquares(int[] arr) {}TODO
@@ -80,12 +90,16 @@ public class Arrays {
         //naiveSquareSorted(nums);  //nlogn
 
         //maxSubArraySum
-        int  nums[] = {-2,1,-3,4,-1,2,1,-5,4};
-        int arr[] = {-1 , -2 };
-        System.out.println(allNegetive(arr));
-       // Output: 6
-        System.out.println(maxSubArraySum(arr));
+//        int  nums[] = {-2,1,-3,4,-1,2,1,-5,4};
+//        int arr[] = {-1 , -2 };
+//        System.out.println(allNegetive(arr));
+//       // Output: 6
+//        System.out.println(maxSubArraySum(arr));
 
+        // Maximum Product Subarray
+        int nums[] = {2,3,-2,4};
+        System.out.println(maxSubArrayProduct(nums));
+        //Output: 6
 
 
     }
